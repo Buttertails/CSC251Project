@@ -1,4 +1,4 @@
-public class Policy
+ public class Policy
 {   
    //Declare fields for policy information
     private int policyNumber;

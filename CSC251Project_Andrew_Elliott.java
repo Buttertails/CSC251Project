@@ -6,6 +6,8 @@ public class CSC251Project_Andrew_Elliott
         //Create scanner object to hold user input
         Scanner keyboard = new Scanner(System.in);
         
+        System.out.println();
+        
         //Promt user for policy number and store in int variable
         System.out.println("Please enter the Policy Number");
         int policyNum = keyboard.nextInt();
