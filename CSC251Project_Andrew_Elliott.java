@@ -1,61 +1,98 @@
+import java.io.File;
+import java.io.*;
 import java.util.Scanner;
+import java.util.ArrayList;
 public class CSC251Project_Andrew_Elliott
 {
-    public static void main(String[] args)
-    {
-        //Create scanner object to hold user input
-        Scanner keyboard = new Scanner(System.in);
+   public static void main(String[] args) throws IOException
+   {      
+      //Open PolicyInformation.txt file for input
+      File file = new File("PolicyInformation.txt");
+      Scanner policyInfo = new Scanner(file);
+      
+      ArrayList<Policy> policyList = new ArrayList<>();
+            
+      String policyNumber;
+      String providerName;
+      String firstName;
+      String lastName;
+      String age;
+      String smoking;
+      String height;
+      String weight;
+      
+      while(policyInfo.hasNext())
+      {
+         policyNumber = policyInfo.nextLine();
+         providerName = policyInfo.nextLine();
+         firstName = policyInfo.nextLine();
+         lastName = policyInfo.nextLine();
+         age = policyInfo.nextLine();
+         smoking = policyInfo.nextLine();
+         height = policyInfo.nextLine();
+         weight = policyInfo.nextLine();
+         policyInfo.nextLine();
+         Policy policy1 = new Policy(policyNumber, providerName, firstName, lastName, age, smoking, height, weight);
+         policyList.add(policy1);
+   
+         policyNumber = policyInfo.nextLine();
+         providerName = policyInfo.nextLine();
+         firstName = policyInfo.nextLine();
+         lastName = policyInfo.nextLine();
+         age = policyInfo.nextLine();
+         smoking = policyInfo.nextLine();
+         height = policyInfo.nextLine();
+         weight = policyInfo.nextLine();
+         policyInfo.nextLine();
+         Policy policy2 = new Policy(policyNumber, providerName, firstName, lastName, age, smoking, height, weight);
+         policyList.add(policy2);
+         
+         policyNumber = policyInfo.nextLine();
+         providerName = policyInfo.nextLine();
+         firstName = policyInfo.nextLine();
+         lastName = policyInfo.nextLine();
+         age = policyInfo.nextLine();
+         smoking = policyInfo.nextLine();
+         height = policyInfo.nextLine();
+         weight = policyInfo.nextLine();
+         policyInfo.nextLine();
+         Policy policy3 = new Policy(policyNumber, providerName, firstName, lastName, age, smoking, height, weight);      
+         policyList.add(policy3);
+         
+         policyNumber = policyInfo.nextLine();
+         providerName = policyInfo.nextLine();
+         firstName = policyInfo.nextLine();
+         lastName = policyInfo.nextLine();
+         age = policyInfo.nextLine();
+         smoking = policyInfo.nextLine();
+         height = policyInfo.nextLine();
+         weight = policyInfo.nextLine();
+         policyInfo.nextLine();
+         Policy policy4 = new Policy(policyNumber, providerName, firstName, lastName, age, smoking, height, weight);   
+         policyList.add(policy4);
         
-        System.out.println();
-        
-        //Promt user for policy number and store in int variable
-        System.out.println("Please enter the Policy Number");
-        int policyNum = keyboard.nextInt();
-        keyboard.nextLine();
-       
-        //Prompt user for provider name and store in String variable
-        System.out.println("Please enter the Provider Name");
-        String provName = keyboard.nextLine();
-        
-        //Prompt user for policyholder's first name and store in String variable
-        System.out.println("Please enter the Policyholder's First Name");
-        String policyFirstName = keyboard.nextLine();
-
-        //Prompt user for policyholder's last name and store in String variable
-        System.out.println("Please enter the Policyholder's Last Name");
-        String policyLastName = keyboard.nextLine();
-        
-        //Prompt user for policyholder's age and store in int variable
-        System.out.println("Please enter the Policyholder's Age");
-        int policyAge = keyboard.nextInt();
-        keyboard.nextLine();
-        
-        //Prompt user for policyholder's smoking status and store in String variable
-        System.out.println("Please enter the Policyholder's Smoking Status (smoker/non-smoker)");
-        String policySmoke = keyboard.nextLine();
-        
-        //Prompt user for policyholder's height and store in int variable
-        System.out.println("Please enter the Policyholder's Height(in inches)");
-        double policyHeight = keyboard.nextInt();
-        keyboard.nextLine();
-        
-        //Prompt user for policyholder's weight and store in int variable
-        System.out.println("Please enter the Policyholder's Weight(in pounds)");
-        double policyWeight = keyboard.nextDouble();
-        
-        //Create policy object and initialize object with user input variables
-        Policy policy = new Policy(policyNum, provName, policyFirstName, policyLastName, policyAge, policySmoke, policyHeight, policyWeight);
-        
-        //Display information from policy class 
-        System.out.println("Policy Number: " + policy.getPolicyNumber());
-        System.out.println("Policy Name: " + policy.getProviderName());
-        System.out.println("Policyholder's First Name: " + policy.getPolicyHolderFirstName());
-        System.out.println("Policyholder's Last Name: " + policy.getPolicyHolderLastName());
-        System.out.println("Policyholder's Age: " + policy.getPolicyHolderAge());
-        System.out.println("Policyholder's Smoking Status: " + policy.getPolicyHolderSmokingStatus());
-        System.out.println("Policyholder's Height: " + policy.getPolicyHolderHeight() + " inches");
-        System.out.println("Policyholder's Weight: " + policy.getPolicyHolderWeight() + " pounds");
-        System.out.printf("Policyholder's BMI: %.2f\n", policy.calcBMI());
-        System.out.printf("Policy Price: $%.2f", policy.calcPolicyPrice());
-    }
+         policyNumber = policyInfo.nextLine();
+         providerName = policyInfo.nextLine();
+         firstName = policyInfo.nextLine();
+         lastName = policyInfo.nextLine();
+         age = policyInfo.nextLine();
+         smoking = policyInfo.nextLine();
+         height = policyInfo.nextLine();
+         weight = policyInfo.nextLine();
+         policyInfo.nextLine();
+         Policy policy5 = new Policy(policyNumber, providerName, firstName, lastName, age, smoking, height, weight);   
+         policyList.add(policy5);
+         
+         policyNumber = policyInfo.nextLine();
+         providerName = policyInfo.nextLine();
+         firstName = policyInfo.nextLine();
+         lastName = policyInfo.nextLine();
+         age = policyInfo.nextLine();
+         smoking = policyInfo.nextLine();
+         height = policyInfo.nextLine();
+         weight = policyInfo.nextLine();
+         Policy policy6 = new Policy(policyNumber, providerName, firstName, lastName, age, smoking, height, weight);          
+         policyList.add(policy6);
+      }
+   }
 }

@@ -1,26 +1,26 @@
  public class Policy
 {   
    //Declare fields for policy information
-    private int policyNumber;
+    private String policyNumber;
     private String providerName;
     private String policyHolderFirstName;
     private String policyHolderLastName;
-    private int policyHolderAge;
+    private String policyHolderAge;
     private String policyHolderSmokingStatus;
-    private double policyHolderHeight;
-    private double policyHolderWeight;
-   
+    private String policyHolderHeight;
+    private String policyHolderWeight;
+       
     //Constructor that initializes all numerical fields to 0 and all string fields to ""
     public Policy()
     {
-        policyNumber = 0;
+        policyNumber = "";
         providerName = "";
         policyHolderFirstName = "";
         policyHolderLastName = "";
-        policyHolderAge = 0;
+        policyHolderAge = "";
         policyHolderSmokingStatus = "";
-        policyHolderHeight = 0;
-        policyHolderWeight = 0;
+        policyHolderHeight = "";
+        policyHolderWeight = "";
     }
     
     /*
@@ -34,7 +34,7 @@
     @param height double variable that holds the height of the policyholder
     @param weight double variable that holds the weight of the policyholder 
     */
-    public Policy(int num, String provName, String firstName, String lastName, int age, String smoking, double height, double weight)
+    public Policy(String num, String provName, String firstName, String lastName, String age, String smoking, String height, String weight)
     {
         policyNumber = num;
         providerName = provName;
@@ -50,7 +50,7 @@
     Setter for the policy number
     @param num int variable that holds the policy number
     */
-    public void setPolicyNumber(int num)
+    public void setPolicyNumber(String num)
     {
         policyNumber = num;
     }
@@ -86,7 +86,7 @@
     Setter for the policyholder's age
     @param age int variable that holds the policyholder's age
     */
-    public void setPolicyHolderAge(int age)
+    public void setPolicyHolderAge(String age)
     {
         policyHolderAge = age;
     }
@@ -104,7 +104,7 @@
     Setter for the policyholder's height
     @param height double variable that holds the height of the policyholder 
     */
-    public void setPolicyHolderHeight(double height)
+    public void setPolicyHolderHeight(String height)
     {
         policyHolderHeight = height;
     }
@@ -113,7 +113,7 @@
     Setter for the policyholder's weight
     @param weight double variable that holds the weight of the policyholder
     */
-    public void setPolicyHolderWeight(double weight)
+    public void setPolicyHolderWeight(String weight)
     {
         policyHolderWeight = weight;
     }
@@ -122,7 +122,7 @@
     Getter for the policy number
     @return policy number 
     */
-    public int getPolicyNumber()
+    public String getPolicyNumber()
     {
         return policyNumber;
     }
@@ -155,10 +155,10 @@
     }
     
     /*
-    Getter for policyholder's agre
+    Getter for policyholder's age
     @return policyholder's age
     */
-    public int getPolicyHolderAge()
+    public String getPolicyHolderAge()
     {
         return policyHolderAge;
     }
@@ -176,7 +176,7 @@
     Getter for policyholder's height
     @return policyholder's height
     */
-    public double getPolicyHolderHeight()
+    public String getPolicyHolderHeight()
     {
         return policyHolderHeight;
     }
@@ -185,7 +185,7 @@
     Getter for policyholder's weight
     @return policyholder's weight
     */
-    public double getPolicyHolderWeight()
+    public String getPolicyHolderWeight()
     {
         return policyHolderWeight;
     }
@@ -195,8 +195,8 @@
     @return result from BMI calculation
     */
     public double calcBMI()
-    {
-        return (policyHolderWeight * 703)/(policyHolderHeight*policyHolderHeight);
+    {       
+      return (Double.parseDouble(policyHolderWeight) * 703)/(Double.parseDouble(policyHolderHeight)*Double.parseDouble(policyHolderHeight));
     }
     
     /*
@@ -208,14 +208,14 @@
         final int BASE_FEE = 600;
         double policyPrice = BASE_FEE;
         
-        if(policyHolderAge > 50)
+        if(Integer.parseInt(policyHolderAge) > 50)
         {
             policyPrice += 75;
         }
 
         if(policyHolderSmokingStatus.equals("smoker"))
         {
-            policyPrice += 100;
+           policyPrice += 100;
         }
 
         if(calcBMI() > 35)
