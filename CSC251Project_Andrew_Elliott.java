@@ -31,68 +31,9 @@ public class CSC251Project_Andrew_Elliott
          smoking = policyInfo.nextLine();
          height = policyInfo.nextLine();
          weight = policyInfo.nextLine();
-         policyInfo.nextLine();
-         Policy policy1 = new Policy(policyNumber, providerName, firstName, lastName, age, smoking, height, weight);
-         policyList.add(policy1);
-   
-         policyNumber = policyInfo.nextLine();
-         providerName = policyInfo.nextLine();
-         firstName = policyInfo.nextLine();
-         lastName = policyInfo.nextLine();
-         age = policyInfo.nextLine();
-         smoking = policyInfo.nextLine();
-         height = policyInfo.nextLine();
-         weight = policyInfo.nextLine();
-         policyInfo.nextLine();
-         Policy policy2 = new Policy(policyNumber, providerName, firstName, lastName, age, smoking, height, weight);
-         policyList.add(policy2);
-         
-         policyNumber = policyInfo.nextLine();
-         providerName = policyInfo.nextLine();
-         firstName = policyInfo.nextLine();
-         lastName = policyInfo.nextLine();
-         age = policyInfo.nextLine();
-         smoking = policyInfo.nextLine();
-         height = policyInfo.nextLine();
-         weight = policyInfo.nextLine();
-         policyInfo.nextLine();
-         Policy policy3 = new Policy(policyNumber, providerName, firstName, lastName, age, smoking, height, weight);      
-         policyList.add(policy3);
-         
-         policyNumber = policyInfo.nextLine();
-         providerName = policyInfo.nextLine();
-         firstName = policyInfo.nextLine();
-         lastName = policyInfo.nextLine();
-         age = policyInfo.nextLine();
-         smoking = policyInfo.nextLine();
-         height = policyInfo.nextLine();
-         weight = policyInfo.nextLine();
-         policyInfo.nextLine();
-         Policy policy4 = new Policy(policyNumber, providerName, firstName, lastName, age, smoking, height, weight);   
-         policyList.add(policy4);
-        
-         policyNumber = policyInfo.nextLine();
-         providerName = policyInfo.nextLine();
-         firstName = policyInfo.nextLine();
-         lastName = policyInfo.nextLine();
-         age = policyInfo.nextLine();
-         smoking = policyInfo.nextLine();
-         height = policyInfo.nextLine();
-         weight = policyInfo.nextLine();
-         policyInfo.nextLine();
-         Policy policy5 = new Policy(policyNumber, providerName, firstName, lastName, age, smoking, height, weight);   
-         policyList.add(policy5);
-         
-         policyNumber = policyInfo.nextLine();
-         providerName = policyInfo.nextLine();
-         firstName = policyInfo.nextLine();
-         lastName = policyInfo.nextLine();
-         age = policyInfo.nextLine();
-         smoking = policyInfo.nextLine();
-         height = policyInfo.nextLine();
-         weight = policyInfo.nextLine();
-         Policy policy6 = new Policy(policyNumber, providerName, firstName, lastName, age, smoking, height, weight);          
-         policyList.add(policy6);
+         if(policyInfo.hasNext())
+            policyInfo.nextLine();   
+         policyList.add(new Policy(policyNumber, providerName, firstName, lastName, age, smoking, height, weight));
       }
       
       for(int index = 0; index < policyList.size(); index++)
