@@ -145,4 +145,17 @@
     {
         return policyHolderWeight;
     }
+    
+    public String toString()
+    {
+      String str1 = "Policy Holder First Name: ";
+      String str2 = "\nPolicy Holder Last Name: ";
+      String str3 = "\nPolicy Holder Age: ";
+      String str4 = "\nPolicy Holder Smoking Status: ";
+      String str5 = "\nPolicy Holder Height: ";
+      String str6 = "\nPolicy Holder Weight: ";
+      
+      return str1 + policyHolderFirstName + str2 + policyHolderLastName + str3 + policyHolderAge + 
+             str4 + policyHolderSmokingStatus + str5 + policyHolderHeight + str6 + policyHolderWeight;
+    }
 }
