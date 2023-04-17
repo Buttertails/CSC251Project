@@ -3,6 +3,7 @@
    //Declare fields for policy information
     private String policyNumber;
     private String providerName;
+    private static int totalPolicyObjects = 0;
            
     //Constructor that initializes all string fields to ""
     public Policy()
@@ -20,6 +21,14 @@
     {
         policyNumber = num;
         providerName = provName;
+    }
+    
+    /*
+    Constructor that increments the totalPolicyObjects variable to keep track of total number of Policy objects created
+    */
+    public static Policy()
+    {
+      totalPolicyObjects++;
     }
     
     /*
