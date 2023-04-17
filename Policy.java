@@ -92,5 +92,15 @@
         }
 
         return policyPrice;
+    }
+    
+    public String toString()
+    {   
+      String str1 = "Policy Number: ";
+      String str2 = "\nPolicy Provider: ";
+      String str3 = "\nBMI: ";
+      String str4 = "\nPolicy Price: ";
+      
+      return str1 + policyNumber + str2 + policyProvider + str3 + calcBMI() + str4 + calcPolicyPrice();
     }  
 }
