@@ -37,6 +37,16 @@
         policyHolderHeight = height;
         policyHolderWeight = weight;
     }
+    
+    public PolicyHolder(PolicyHolder object2)
+    {
+       policyHolderFirstName = object2.policyHolderFirstName;
+       policyHolderLastName = object2.policyHolderLastName;
+       policyHolderAge = object2.policyHolderAge;
+       policyHolderSmokingStatus = object2.policyHolderSmokingStatus;
+       policyHolderHeight = object2.policyHolderHeight;
+       policyHolderWeight = object2.policyHolderWeight;       
+    }
         
     /*
     Setter for the policyholder's first name
@@ -146,16 +156,14 @@
         return policyHolderWeight;
     }
     
+    //toString method to display data
     public String toString()
-    {
-      String str1 = "Policy Holder First Name: ";
-      String str2 = "\nPolicy Holder Last Name: ";
-      String str3 = "\nPolicy Holder Age: ";
-      String str4 = "\nPolicy Holder Smoking Status: ";
-      String str5 = "\nPolicy Holder Height: ";
-      String str6 = "\nPolicy Holder Weight: ";
-      
-      return str1 + policyHolderFirstName + str2 + policyHolderLastName + str3 + policyHolderAge + 
-             str4 + policyHolderSmokingStatus + str5 + policyHolderHeight + str6 + policyHolderWeight;
+    {      
+      return String.format("\nPolicyholder's First Name: " + policyHolderFirstName + 
+             "\nPolicyholder's Last Name: " + policyHolderLastName + 
+             "\nPolicyholder's Age: " + policyHolderAge + 
+             "\nPolicyholder's Smoking Status (Y/N): " + policyHolderSmokingStatus + 
+             "\nPolicyholder's Height: " + Double.parseDouble(policyHolderHeight) + "inches" + 
+             "\nPolicyholder's Weight: " + Double.parseDouble(policyHolderWeight) + "pounds");
     }
 }

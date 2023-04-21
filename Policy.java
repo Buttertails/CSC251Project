@@ -3,6 +3,7 @@
    //Declare fields for policy information
     private String policyNumber;
     private String providerName;
+    private PolicyHolder policyHolder;
     private static int totalPolicyObjects = 0;
            
     //Constructor that initializes all string fields to ""
@@ -13,24 +14,19 @@
     }
     
     /*
-    Constructor that initializes all fields with policy information from user input 
+    Constructor that initializes all fields with policy information from user input
+    Increments totalPolicyObjects evertime a new Policy object is created
     @param num int variable that holds the policy number 
     @param provName String variable that holds the name of provider
     */
-    public Policy(String num, String provName)
+    public Policy(String num, String provName, PolicyHolder holder)
     {
         policyNumber = num;
         providerName = provName;
+        policyHolder = new PolicyHolder(holder);
+        totalPolicyObjects++;
     }
-    
-    /*
-    Constructor that increments the totalPolicyObjects variable to keep track of total number of Policy objects created
-    */
-    public static Policy()
-    {
-      totalPolicyObjects++;
-    }
-    
+        
     /*
     Setter for the policy number
     @param num int variable that holds the policy number
@@ -73,7 +69,7 @@
     */
     public double calcBMI()
     {       
-      return (Double.parseDouble(policyHolderWeight) * 703)/(Double.parseDouble(policyHolderHeight)*Double.parseDouble(policyHolderHeight));
+      return (Double.parseDouble(policyHolder.getPolicyHolderWeight()) * 703)/(Double.parseDouble(policyHolder.getPolicyHolderHeight())*Double.parseDouble(policyHolder.getPolicyHolderHeight()));
     }
     
     /*
@@ -85,12 +81,12 @@
         final int BASE_FEE = 600;
         double policyPrice = BASE_FEE;
         
-        if(Integer.parseInt(policyHolderAge) > 50)
+        if(Integer.parseInt(policyHolder.getPolicyHolderAge()) > 50)
         {
             policyPrice += 75;
         }
 
-        if(policyHolderSmokingStatus.equals("smoker"))
+        if(policyHolder.getPolicyHolderSmokingStatus().equals("smoker"))
         {
            policyPrice += 100;
         }
@@ -103,13 +99,19 @@
         return policyPrice;
     }
     
+    //returns the total number of policy objects 
+    public int getTotalPolicyObjects()
+    {
+      return totalPolicyObjects;
+    }
+    
+    //toString method to display data
     public String toString()
-    {   
-      String str1 = "Policy Number: ";
-      String str2 = "\nPolicy Provider: ";
-      String str3 = "\nBMI: ";
-      String str4 = "\nPolicy Price: ";
-      
-      return str1 + policyNumber + str2 + policyProvider + str3 + calcBMI() + str4 + calcPolicyPrice();
+    {        
+      return String.format("Policy Number: " + policyNumber + 
+             "\nProvider Name: " + providerName +
+             policyHolder.toString() + 
+             "\nPolicyholder's BMI: %.2f" +  
+             "\nPolicy Price: $%.2f\n", calcBMI(), calcPolicyPrice());
     }  
 }
